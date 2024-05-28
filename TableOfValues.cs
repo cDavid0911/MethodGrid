@@ -59,7 +59,9 @@ namespace MethodGrid
                 Values[0, k] = LeftBoundaryCond(Grid.GetY(k));
 
                 for (int i = 1; i < Values.GetLength(0); i++)
-                    Values[i, k] = Values[i, k-1]* (1 - v) + v * Values[i-1, k-1] + f(Grid.GetX(i), Grid.GetY(k-1)) * Grid.Tau;                
+                    Values[i, k] = Values[i, k-1]* (1 - v) 
+                            + v * Values[i-1, k-1] 
+                            + f(Grid.GetX(i), Grid.GetY(k-1)) * Grid.Tau;                
             }
         }
 

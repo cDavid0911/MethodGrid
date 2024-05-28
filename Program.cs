@@ -90,19 +90,16 @@ namespace MethodGrid
 
             //Кроки сітки
             double h = 0.03;
-            double tau = 0.00001;
+            double tau = 0.0001;
 
             var grid = new Grid(h, tau);
             var variant3 = (new TableOfValues(grid));
 
             // Початкові умови
             MathFunction initialCond = new MathFunction ( x => 0.5 * Math.Cos(Math.PI * x));
-            // Граничні умови (ліва та права границі відповідно)
+            // Ліва гранична умова 
             MathFunction leftBoundaryCond = new MathFunction( k  => 0.5 * Math.Pow(Math.E, k)) ; 
-            //MathFunction2 rightBoundaryCond = new MathFunction2((PrevU, k ) => Math.Pow(Math.E, 2 - k));
 
-            // Функція g
-            //MathFunction2 g = new MathFunction2((i,k) => 1);
 
             // Функція f
             MathFunction2 f = new MathFunction2((i, k) => i + k);
